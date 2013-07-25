@@ -2,7 +2,7 @@ var keyboard = qwertyHancock({
     id: 'keyboard',
     height: 200,
     width: 600,
-    startNote: 'C2',
+    startNote: 'C5',
     octaves: 1.7,
     whiteKeyColour: '#eee',
     blackKeyColour: '#585858',

@@ -1,7 +1,7 @@
 /*
  * Qwerty Hancock keyboard library v0.2
  * Copyright 2012-13, Stuart Memo
- * 
+ *
  * Licensed under the MIT License
  * http://opensource.org/licenses/mit-license.php
  *
@@ -26,8 +26,8 @@
             blackKeyHeight = settings.blackKeyHeight || keyboardHeight / 3,
             keyboardLayout = settings.keyboardLayout || "en",
             paper = new Raphael(id, keyboardWidth, keyboardHeight),
-            notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'], 
-            notesWithSharps = ['A', 'C', 'D', 'F', 'G'], 
+            notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
+            notesWithSharps = ['A', 'C', 'D', 'F', 'G'],
             noteCounter = 0,
             firstNote = startNote.charAt(0),
             octaveCounter = startOctave,
@@ -41,7 +41,7 @@
             newNotes = [];
 
         // Reset div height.
-        document.getElementById(id).style.fontSize = '0px'; 
+        document.getElementById(id).style.fontSize = '0px';
 
         var getFrequency = function (note) {
             var notes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'],
@@ -56,9 +56,9 @@
             var keyNumber = notes.indexOf(note.slice(0, -1));
 
             if (keyNumber < 3) {
-                keyNumber = keyNumber + 12 + ((octave - 1) * 12) + 1; 
+                keyNumber = keyNumber + 12 + ((octave - 1) * 12) + 1;
             } else {
-                keyNumber = keyNumber + ((octave - 1) * 12) + 1; 
+                keyNumber = keyNumber + ((octave - 1) * 12) + 1;
             }
 
             // Return frequency of note
@@ -126,7 +126,7 @@
                 noteCounter = 0;
             }
             for (var j = 0; j < notesWithSharps.length; j++) {
-                if (newNotes[noteCounter] === notesWithSharps[j]) { 
+                if (newNotes[noteCounter] === notesWithSharps[j]) {
                     bizarreNoteCounter = (newNotes[noteCounter] + '#');
                     if (bizarreNoteCounter === 'C#') {
                         octaveCounter++;
@@ -271,7 +271,7 @@
        var setKeyDownCallback = function (userCallback) {
            keyDownCallback = userCallback;
        };
-     
+
        var setKeyUpCallback = function (userCallback) {
            keyUpCallback = userCallback;
        };

@@ -14,16 +14,16 @@ var MyStylophone = (function () {
             currentOscillator.disconnect();
         }
         // types SAWTOOTH | SINE | SQUARE | TRIANGLE | CUSTOM
-        oscillator.type = oscillator.TRIANGLE;
+        oscillator.type = oscillator.SINE;
         oscillator.frequency.value = frequency;
 
-        gainNode.gain.value = 1;
+        gainNode.gain.value = 0.3;
 
         // create the connection
         oscillator.connect(gainNode);
         gainNode.connect(ctx.destination);
 
-        oscillator.noteOn(0);
+        oscillator.start(0);
 
         currentOscillator = oscillator;
 
@@ -31,7 +31,7 @@ var MyStylophone = (function () {
     };
 
     var stopNote = function () {
-        currentOscillator.noteOff(0);
+        currentOscillator.stop(0);
         currentOscillator.disconnect();
     };
 
