@@ -14,7 +14,7 @@ var MyStylophone = (function () {
             currentOscillator.disconnect();
         }
         // types SAWTOOTH | SINE | SQUARE | TRIANGLE | CUSTOM
-        oscillator.type = oscillator.SINE;
+        oscillator.type = oscillator.SAWTOOTH;
         oscillator.frequency.value = frequency;
 
         gainNode.gain.value = 0.3;
